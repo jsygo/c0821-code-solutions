@@ -1,0 +1,74 @@
+.center-page {
+  display: flex;
+  justify-content: center;
+}
+
+.atlas {
+  font-family: "AtlasGrotesk", sans-serif;
+}
+
+.brandon-normal {
+  font-family: "Brandon Grotesque", sans-serif;
+  font-weight: normal;
+}
+
+.brandon-500 {
+  font-family: "Brandon Grotesque", sans-serif;
+  font-weight: 500;
+}
+
+.align-button {
+  text-align: right;
+}
+
+form {
+  width: 400px;
+}
+
+h3 {
+  text-align: center;
+  letter-spacing: 1px;
+  color: rgb(236, 93, 87);
+}
+
+form > div {
+  margin-top: 10px;
+}
+
+input,
+select {
+  width: 100%;
+  border: 1px solid rgb(166, 170, 169);
+  border-radius: 5px;
+}
+
+label {
+  margin-left: 10px;
+  font-size: 11px;
+}
+
+div > div {
+  margin-top: 3px;
+}
+
+input {
+  padding: 10px;
+}
+
+::placeholder {
+  font-family: "AtlasGrotesk", sans-serif;
+}
+
+select {
+  background-color: rgb(243, 243, 243);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+button {
+  border-radius: 30px;
+  padding: 7px 20px;
+  color: white;
+  background-color: rgb(236, 93, 87);
+  border: none;
+}
