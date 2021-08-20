@@ -56,3 +56,11 @@ body {
   flex-basis: 80%;
   margin: 0;
 }
+
+.gray-font {
+  color: rgb(209, 217, 221);
+}
+
+.line-height-1-rem {
+  line-height: 1rem;
+}
