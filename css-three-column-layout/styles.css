@@ -49,5 +49,10 @@ body {
 }
 
 .shrink-font {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
+}
+
+.fit-p {
+  flex-basis: 80%;
+  margin: 0;
 }
