@@ -1,0 +1,66 @@
+body {
+  background-color: rgb(54, 150, 218);
+  font-family: "Lato", sans-serif;
+  color: white;
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto 0;
+}
+
+.row {
+  display: flex;
+}
+
+.col-full {
+  flex-basis: 100%;
+}
+
+.col-one-third {
+  flex-basis: calc(100% / 3);
+}
+
+.circle {
+  background-color: white;
+  border-radius: 50%;
+  width: 85px;
+  height: 85px;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.fit-image {
+  width: 50%;
+  height: 50%;
+}
+
+.padding-10 {
+  padding: 10px;
+}
+
+.shrink-font {
+  font-size: 0.7rem;
+}
+
+.fit-p {
+  flex-basis: 80%;
+  margin: 0;
+}
+
+.gray-font {
+  color: rgb(209, 217, 221);
+}
+
+.line-height-1-rem {
+  line-height: 1rem;
+}
