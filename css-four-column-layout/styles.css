@@ -1,0 +1,44 @@
+body {
+  background-color: rgb(247, 248, 250);
+  font-family: "Barlow", sans-serif;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+}
+
+.col-one-fourth {
+  flex-basis: 25%;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+div.col-one-fourth {
+  margin: 0 15px;
+}
+
+.phone {
+  width: 250px;
+}
+
+.icon {
+  width: 50px;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.description-font-size {
+  font-size: 0.8rem;
+}
