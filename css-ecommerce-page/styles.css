@@ -4,9 +4,11 @@
 
 body {
   margin: 0;
+  font-family: "DM Sans", sans-serif;
 }
 
 .container {
+  width: 100%;
   max-width: 1000px;
 }
 
@@ -20,4 +22,38 @@ body {
 
 .col-one-fifth {
   flex-basis: 20%;
+}
+
+.center-content {
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.img-fit {
+  object-fit: contain;
+  height: 300px;
+}
+
+.brand-name {
+
+}
+
+.size-info {
+  color: rgb(223, 223, 223);
+  border-left: 1px solid rgb(223, 223, 223);
+}
+
+.price {
+  background-color: rgb(253, 242, 231);
+  border-radius: 3px;
+  padding: 2px;
+}
+
+.retail {
+
 }
