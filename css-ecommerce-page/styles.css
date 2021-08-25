@@ -36,7 +36,6 @@ body {
 
 .img-fit {
   object-fit: contain;
-  height: 300px;
 }
 
 .brand-name {
