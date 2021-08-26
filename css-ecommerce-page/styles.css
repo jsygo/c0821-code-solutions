@@ -9,11 +9,16 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1250px;
+  margin: 0 auto;
 }
 
 .row {
   display: flex;
+}
+
+.img-row-height {
+  height: 375px;
 }
 
 .col-full {
@@ -34,8 +39,41 @@ body {
   text-align: center;
 }
 
+.margin-lr-10px {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.background-img {
+  background-size: cover;
+  background-origin: border-box;
+  background-position-x: center;
+}
+
+.free-img {
+  background-image: url('images/dress1.jpeg');
+}
+
+.ysl-img {
+  background-image: url('images/ysl-bag.jpeg');
+}
+
+.tiff-img {
+  background-image: url('images/key.jpeg');
+}
+
+.lv-img {
+  background-image: url('images/lv-bag.jpg');
+}
+
+.ref-img {
+  background-image: url('images/dress2.jpeg');
+}
+
 .img-fit {
-  object-fit: contain;
+  object-fit: cover;
+  height: 375px;
+  width: 250px;
 }
 
 .brand-name {
