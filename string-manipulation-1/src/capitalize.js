@@ -15,15 +15,11 @@
 // return completed word
 
 function capitalize(word) {
-  var firstChar = '';
+  var firstChar = word[0];
   var otherChars = '';
   var capitalizedWord = '';
-  for (var i = 0; i < word.length; i++) {
-    if (i === 0) {
-      firstChar = word[0];
-    } else {
-      otherChars += word[i];
-    }
+  for (var i = 1; i < word.length; i++) {
+    otherChars += word[i];
   }
   firstChar = firstChar.toUpperCase();
   otherChars = otherChars.toLowerCase();

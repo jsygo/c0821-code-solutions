@@ -7,13 +7,13 @@
 //    if it matches any, return true
 // otherwise, return false
 
-function isVowel(char) {
-  if (char === 'a' || char === 'A' || char === 'e' || char === 'E' || char === 'i' ||
-  char === 'I' || char === 'o' || char === 'O' || char === 'u' || char === 'U') {
-    return true;
-  }
-  return false;
-}
+// function isVowel(char) {
+//   if (char === 'a' || char === 'A' || char === 'e' || char === 'E' || char === 'i' ||
+//   char === 'I' || char === 'o' || char === 'O' || char === 'u' || char === 'U') {
+//     return true;
+//   }
+//   return false;
+// }
 
 // solution 2
 // change character to lowercase
@@ -21,10 +21,10 @@ function isVowel(char) {
 // if character matches any, return true
 // otherwise, return false
 
-// function isVowel(char) {
-//   char = char.toLowerCase();
-//   if (char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u') {
-//     return true;
-//   }
-//   return false;
-// }
+function isVowel(char) {
+  char = char.toLowerCase();
+  if (char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u') {
+    return true;
+  }
+  return false;
+}
