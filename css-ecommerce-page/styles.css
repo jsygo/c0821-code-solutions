@@ -9,7 +9,7 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1250px;
+  max-width: 1500px;
   margin: 0 auto;
 }
 
@@ -29,6 +29,11 @@ body {
   flex-basis: 20%;
 }
 
+.margin-lr-10px {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .center-content {
   justify-content: center;
   align-items: center;
@@ -39,50 +44,25 @@ body {
   text-align: center;
 }
 
-.margin-lr-10px {
-  margin-left: 10px;
-  margin-right: 10px;
-}
 
-.background-img {
-  background-size: cover;
-  background-origin: border-box;
-  background-position-x: center;
-}
-
-.free-img {
-  background-image: url('images/dress1.jpeg');
-}
-
-.ysl-img {
-  background-image: url('images/ysl-bag.jpeg');
-}
-
-.tiff-img {
-  background-image: url('images/key.jpeg');
-}
-
-.lv-img {
-  background-image: url('images/lv-bag.jpg');
-}
-
-.ref-img {
-  background-image: url('images/dress2.jpeg');
+.font-weight-normal {
+  font-weight: normal;
 }
 
 .img-fit {
   object-fit: cover;
-  height: 375px;
-  width: 250px;
+  width: 100%;
+  height: 400px;
 }
 
 .brand-name {
-
+  padding-right: 0.25em;
 }
 
 .size-info {
   color: rgb(223, 223, 223);
   border-left: 1px solid rgb(223, 223, 223);
+  padding-left: 0.25em;
 }
 
 .price {
@@ -92,5 +72,6 @@ body {
 }
 
 .retail {
-
+  color: rgb(223, 223, 223);
+  text-decoration-line: line-through;
 }
