@@ -17,6 +17,10 @@ body {
   display: flex;
 }
 
+.img-row-height {
+  height: 375px;
+}
+
 .col-full {
   flex-basis: 100%;
 }
@@ -39,6 +43,7 @@ body {
 .center-text {
   text-align: center;
 }
+
 
 .font-weight-normal {
   font-weight: normal;
