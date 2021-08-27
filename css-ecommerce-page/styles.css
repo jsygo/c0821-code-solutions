@@ -45,6 +45,7 @@ body {
 .size-info {
   color: rgb(223, 223, 223);
   border-left: 1px solid rgb(223, 223, 223);
+  padding-left: 1em;
 }
 
 .price {
