@@ -1,0 +1,211 @@
+body {
+  background-color: white;
+  font-family: "Avenir", sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  padding: 0 85px;
+}
+
+.col-full {
+  flex-basis: 100%;
+}
+
+.col-three-fourths {
+  flex-basis: 75%;
+}
+
+.col-half {
+  flex-basis: 50%;
+}
+
+.col-one-fourth {
+  flex-basis: 25%;
+}
+
+.hero-image {
+  width: 86.4%;
+  background-image: url(images/hero.jpg);
+  background-size: cover;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  left: 85px;
+}
+
+.contrast-80-pct {
+  filter: contrast(0.8);
+}
+
+.hero-image > div {
+  height: 100%;
+}
+
+nav {
+  border-bottom: 2px solid rgb(231, 233, 236);
+}
+
+button {
+  border: none;
+  color: white;
+  background-color: rgb(41, 68, 100);
+  border-radius: 5px;
+}
+
+button.get-started-btn {
+  font-size: 20px;
+  padding: 20px 40px;
+  height: 60px;
+}
+
+button.contact-us-btn {
+  font-size: inherit;
+  padding: 15px 15px;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.top-offset-150px {
+  top: 150px;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.justify-start {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.justify-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.light-gray-background {
+  background-color: rgb(250, 250, 250);
+}
+
+.dark-gray-background {
+  background-color: rgb(82, 83, 81);
+}
+
+.tiempos-headline {
+  font-family: "Tiempos Headline", serif;
+}
+
+.dark-gray-text {
+  color: rgb(110, 110, 110);
+}
+
+.light-gray-text {
+  color: rgb(160, 160, 160);
+}
+
+.white-text {
+  color: white;
+}
+
+.line-height-2rem {
+  line-height: 2rem;
+}
+
+.margin-lr-30px {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.margin-tb-30px {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.margin-tb-10px {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.margin-right-30px {
+  margin-right: 30px;
+}
+
+.margin-left-30px {
+  margin-left: 30px;
+}
+
+.margin-left-60px {
+  margin-left: 60px;
+}
+
+.margin-top-0 {
+  margin-top: 0;
+}
+
+.pad-tb-90px {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.pad-tb-60px {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.pad-tb-30px {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.pad-tb-10px {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.pad-bottom-30px {
+  padding-bottom: 30px;
+}
+
+.width-50pct {
+  width: 50%;
+}
+
+.height-560px {
+  height: 560px;
+}
+
+.height-740px {
+  height: 740px;
+}
+
+.logo-size {
+  width: 120px;
+}
