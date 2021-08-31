@@ -7,14 +7,17 @@
 
 var $container = document.querySelector('#container');
 var $lightbulb = document.querySelector('#lightbulb');
+var lightOn = false;
 
 function lightSwitch(event) {
-  if ($lightbulb.className === 'bulb-off') {
-    $container.className = 'container-on';
-    $lightbulb.className = 'bulb-on';
-  } else {
+  if (lightOn) {
     $container.className = 'container-off';
     $lightbulb.className = 'bulb-off';
+    lightOn = false;
+  } else {
+    $container.className = 'container-on';
+    $lightbulb.className = 'bulb-on';
+    lightOn = true;
   }
 }
 
