@@ -24,10 +24,12 @@ function keyCheck(event) {
       $practiceText[indexCounter].className = 'current';
     }
   } else {
-    // $practiceText[indexCounter].textContent = event.key;
-    // document.addEventListener('keyup', function (event) {
-    //   $practiceText[indexCounter].textContent = correctKey;
-    // });
+    $practiceText[indexCounter].textContent = event.key;
+    document.removeEventListener('keydown', keyCheck);
+    setTimeout(function () {
+      $practiceText[indexCounter].textContent = correctKey;
+      document.addEventListener('keydown', keyCheck);
+    }, 0.5 * 1000);
     $practiceText[indexCounter].className = 'incorrect';
   }
   keyStrokeCounter++;
