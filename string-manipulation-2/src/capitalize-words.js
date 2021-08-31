@@ -22,8 +22,7 @@ function capitalizeWords(string) {
     if (string[i] === ' ') {
       capitalString += string[i];
       capitalString += string[i + 1].toUpperCase();
-    } else if (string[i - 1] === ' ') {
-      continue;
+      i++;
     } else {
       capitalString += string[i].toLowerCase();
     }
