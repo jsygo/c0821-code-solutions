@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+#container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#lightbulb {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
+
+.bulb-on {
+  background-color: rgb(250, 234, 132);
+  box-shadow: 0 0 50px rgb(252, 238, 161);
+}
+
+.container-on {
+  background-color: rgb(254, 249, 241);
+}
+
+.bulb-off {
+  background-color: rgb(37, 37, 37);
+  box-shadow: 0 -15px 0 10px rgb(12, 12, 12);
+}
+
+.container-off {
+  background-color: rgb(17, 17, 17);
+}
