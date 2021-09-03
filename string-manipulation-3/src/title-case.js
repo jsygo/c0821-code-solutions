@@ -40,27 +40,30 @@
 function titleCase(title) {
   var finalOutput = '';
   var storageString = '';
-  // var minorWords = ['and', 'or', 'nor', 'but', 'a', 'an', 'the', 'as', 'at', 'by', 'for', 'in', 'of', 'on', 'per', 'to'];
+  var minorWords = ['and ', 'or ', 'nor ', 'but ', 'a ', 'an ', 'the ', 'as ', 'at ', 'by ', 'for ', 'in ', 'of ', 'on ', 'per ', 'to '];
+  var firstLetterIndex = 0;
+  // debugger;
   for (var i = 0; i < title.length; i++) {
     storageString += title[i];
     if (title[i] === ' ' || title[i] === '-' || i === title.length - 1) {
-      if (storageString.toLowerCase() === 'javascript') {
-        storageString = 'JavaScript';
-        finalOutput += storageString;
-        storageString = '';
-      } else if (storageString.toLowerCase() === 'javascript:') {
-        storageString = 'JavaScript:';
-        finalOutput += storageString;
-        storageString = '';
+      if (storageString.toLowerCase() === 'javascript ') {
+        storageString = 'JavaScript ';
+      } else if (storageString.toLowerCase() === 'javascript: ') {
+        storageString = 'JavaScript: ';
       } else if (storageString.toLowerCase() === 'api') {
         storageString = 'API';
-        finalOutput += storageString;
-        storageString = '';
-      } /* else if () {
+      } else if (firstLetterIndex === 0 || title[firstLetterIndex - 2] === ':') {
+        storageString = storageString.toLowerCase();
         storageString[0] = storageString[0].toUpperCase();
-        finalOutput += storageString;
-        storageString = '';
-      } */
+      } else if (minorWords.includes(storageString)) {
+        storageString = storageString.toLowerCase();
+      } else {
+        storageString = storageString.toLowerCase();
+        storageString[0] = storageString[0].toUpperCase();
+      }
+      finalOutput += storageString;
+      storageString = '';
+      firstLetterIndex = i + 1;
     }
   }
   return finalOutput;
