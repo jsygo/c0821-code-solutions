@@ -42,7 +42,8 @@ function titleCase(title) {
   var storageString = '';
   var minorWords = ['and ', 'or ', 'nor ', 'but ', 'a ', 'an ', 'the ', 'as ', 'at ', 'by ', 'for ', 'in ', 'of ', 'on ', 'per ', 'to '];
   var firstLetterIndex = 0;
-  // debugger;
+  var firstChar = '';
+  var otherChars = '';
   for (var i = 0; i < title.length; i++) {
     storageString += title[i];
     if (title[i] === ' ' || title[i] === '-' || i === title.length - 1) {
@@ -53,13 +54,27 @@ function titleCase(title) {
       } else if (storageString.toLowerCase() === 'api') {
         storageString = 'API';
       } else if (firstLetterIndex === 0 || title[firstLetterIndex - 2] === ':') {
-        storageString = storageString.toLowerCase();
-        storageString[0] = storageString[0].toUpperCase();
+        firstChar = storageString[0];
+        for (var j = 1; j < storageString.length; j++) {
+          otherChars += storageString[j];
+        }
+        storageString = '';
+        storageString += firstChar.toUpperCase();
+        storageString += otherChars.toLowerCase();
+        firstChar = '';
+        otherChars = '';
       } else if (minorWords.includes(storageString)) {
         storageString = storageString.toLowerCase();
       } else {
-        storageString = storageString.toLowerCase();
-        storageString[0] = storageString[0].toUpperCase();
+        firstChar = storageString[0];
+        for (var k = 1; k < storageString.length; k++) {
+          otherChars += storageString[k];
+        }
+        storageString = '';
+        storageString += firstChar.toUpperCase();
+        storageString += otherChars.toLowerCase();
+        firstChar = '';
+        otherChars = '';
       }
       finalOutput += storageString;
       storageString = '';
