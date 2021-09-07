@@ -63,14 +63,17 @@ for (var deckIndex = 0; deckIndex < 52; deckIndex++) {
     }
   }
 }
+
+var shuffledDeck = _.shuffle(deck);
+
+var winners = [];
+
 // First i need helper functions for:
 // dealing the cards
 //    shuffling should be the first thing that happens in the game function
 // calculating score and winner
-
+// tiebreaker
 // for shuffling cards
-
-var shuffledDeck = _.shuffle(deck);
 
 function dealCards(players, deck, numOfCards) {
   for (var i = 0; i < players.length; i++) {
@@ -89,8 +92,8 @@ function dealCards(players, deck, numOfCards) {
 
 function getScore(player) {
   player.score = 0;
-  debugger;
-  for (var i = 0; i < player.hand; i++) {
+  // debugger;
+  for (var i = 0; i < player.hand.length; i++) {
     if (typeof player.hand[i].rank === 'number') {
       player.score += player.hand[i].rank;
     } else if (player.hand[i].rank !== 'ace') {
@@ -111,9 +114,7 @@ function getScore(player) {
 // if it is equal to highestScore, add that player to the winners array
 
 function findWinner(players) {
-  var winners = [];
   var highestScore = 0;
-  // debugger;
   for (var i = 0; i < players.length; i++) {
     getScore(players[i]);
     if (players[i].score > highestScore) {
@@ -124,11 +125,28 @@ function findWinner(players) {
       winners.push(players[i]);
     }
   }
-  return winners;
 }
 
-dealCards(players);
-findWinner(players);
-
 // shuffle cards
-//
+// deal cards
+// find winner
+//    if there is more than one winner, deal one card to each and check for winner again
+// once there is only one winner, console.log winner message
+
+function runGame(players, numOfCards) {
+  dealCards(players, shuffledDeck, numOfCards);
+
+  findWinner(players);
+
+  while (winners.length > 1) {
+    dealCards(winners, shuffledDeck, 1);
+    findWinner(winners);
+  }
+
+  for (var i = 0; i < players.length; i++) {
+    console.log(`${players[i].name}'s score: ${players[i].score}.`);
+  }
+  console.log(`${winners[0].name} wins!`);
+}
+
+runGame(players, 2);
