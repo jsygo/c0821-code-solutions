@@ -40,46 +40,73 @@
 function titleCase(title) {
   var finalOutput = '';
   var storageString = '';
-  var minorWords = ['and ', 'or ', 'nor ', 'but ', 'a ', 'an ', 'the ', 'as ', 'at ', 'by ', 'for ', 'in ', 'of ', 'on ', 'per ', 'to '];
+  var minorWords = ['and', 'or', 'nor', 'but', 'a', 'an', 'the', 'as', 'at', 'by', 'for', 'in', 'of', 'on', 'per', 'to'];
   var firstLetterIndex = 0;
   var firstChar = '';
   var otherChars = '';
   for (var i = 0; i < title.length; i++) {
     storageString += title[i];
-    if (title[i] === ' ' || title[i] === '-' || i === title.length - 1) {
-      if (storageString.toLowerCase() === 'javascript ') {
-        storageString = 'JavaScript ';
-      } else if (storageString.toLowerCase() === 'javascript: ') {
-        storageString = 'JavaScript: ';
-      } else if (storageString.toLowerCase() === 'api') {
-        storageString = 'API';
-      } else if (firstLetterIndex === 0 || title[firstLetterIndex - 2] === ':') {
-        firstChar = storageString[0];
-        for (var j = 1; j < storageString.length; j++) {
-          otherChars += storageString[j];
-        }
-        storageString = '';
-        storageString += firstChar.toUpperCase();
-        storageString += otherChars.toLowerCase();
-        firstChar = '';
-        otherChars = '';
-      } else if (minorWords.includes(storageString)) {
-        storageString = storageString.toLowerCase();
-      } else {
-        firstChar = storageString[0];
-        for (var k = 1; k < storageString.length; k++) {
-          otherChars += storageString[k];
-        }
-        storageString = '';
-        storageString += firstChar.toUpperCase();
-        storageString += otherChars.toLowerCase();
-        firstChar = '';
-        otherChars = '';
+    // debugger;
+    // if (title[i] === ' ' || title[i] === '-' || i === title.length - 1) {
+    //   var storageStringCopy = storageString;
+    //   console.log('storageString', storageString);
+    //   console.log('storageStringCopy', storageStringCopy);
+    //   if (storageString[storageString.length - 1] === ' ') {
+    //     storageString = '';
+    //     for (var storageIndex = 0; storageIndex < (storageStringCopy.length - 1); storageString++) {
+    //       storageString += storageStringCopy[storageIndex];
+    //     }
+    //   }
+    if (storageString.toLowerCase() === 'javascript') {
+      storageString = 'JavaScript';
+      // if (storageStringCopy[storageStringCopy.length - 1] === ' ') {
+      //   storageString += ' ';
+      // }
+    } else if (storageString.toLowerCase() === 'javascript:') {
+      storageString = 'JavaScript:';
+      // if (storageStringCopy[storageStringCopy.length - 1] === ' ') {
+      //   storageString += ' ';
+      // }
+    } else if (storageString.toLowerCase() === 'api') {
+      storageString = 'API';
+      // if (storageStringCopy[storageStringCopy.length - 1] === ' ') {
+      //   storageString += ' ';
+      // }
+    } else if (firstLetterIndex === 0 || title[firstLetterIndex - 2] === ':') {
+      // if (storageStringCopy[storageStringCopy.length - 1] === ' ') {
+      //   storageString += ' ';
+      // }
+      firstChar = storageString[0];
+      for (var j = 1; j < storageString.length; j++) {
+        otherChars += storageString[j];
       }
-      finalOutput += storageString;
       storageString = '';
-      firstLetterIndex = i + 1;
+      storageString += firstChar.toUpperCase();
+      storageString += otherChars.toLowerCase();
+      firstChar = '';
+      otherChars = '';
+    } else if (minorWords.includes(storageString)) {
+      // if (storageStringCopy[storageStringCopy.length - 1] === ' ') {
+      //   storageString += ' ';
+      // }
+      storageString = storageString.toLowerCase();
+    } else {
+      // if (storageStringCopy[storageStringCopy.length - 1] === ' ') {
+      //   storageString += ' ';
+      // }
+      firstChar = storageString[0];
+      for (var k = 1; k < storageString.length; k++) {
+        otherChars += storageString[k];
+      }
+      storageString = '';
+      storageString += firstChar.toUpperCase();
+      storageString += otherChars.toLowerCase();
+      firstChar = '';
+      otherChars = '';
     }
+    finalOutput += storageString;
+    storageString = '';
+    firstLetterIndex = i + 1;
   }
   return finalOutput;
 }
