@@ -69,20 +69,20 @@ function getScore(player) {
 // if it is equal to highestScore, add that player to the winners array
 
 function findWinner(players) {
-  var winners = [];
+  var winnersArray = [];
 
   var highestScore = 0;
   for (var i = 0; i < players.length; i++) {
     getScore(players[i]);
     if (players[i].score > highestScore) {
       highestScore = players[i].score;
-      winners = [];
-      winners.push(players[i]);
+      winnersArray = [];
+      winnersArray.push(players[i]);
     } else if (players[i].score === highestScore) {
-      winners.push(players[i]);
+      winnersArray.push(players[i]);
     }
   }
-  return winners;
+  return winnersArray;
 }
 
 // shuffle cards
@@ -102,7 +102,7 @@ function runGame(playerNames, numOfCards) {
 
   while (winners.length > 1) {
     dealCards(winners, shuffledDeck, 1);
-    findWinner(winners);
+    winners = findWinner(winners);
   }
 
   for (var i = 0; i < players.length; i++) {
