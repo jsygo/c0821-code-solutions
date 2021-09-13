@@ -1,72 +1,28 @@
 console.log('Lodash is loaded:', typeof _ !== 'undefined');
 
-var players = [];
-for (var playersIndex = 0; playersIndex < 4; playersIndex++) {
-  players.push({ name: `player${playersIndex + 1}`, hand: [] });
+function addPlayers(playerNames) {
+  var players = [];
+  for (var playersIndex = 0; playersIndex < playerNames.length; playersIndex++) {
+    players.push({ name: playerNames[playersIndex], hand: [] });
+  }
+  return players;
 }
 
-var deck = [];
+function createDeck() {
+  var deck = [];
 
-for (var deckIndex = 0; deckIndex < 52; deckIndex++) {
-  deck.push({ rank: '', suit: '' });
-  if (deckIndex < 13) {
-    deck[deckIndex].suit = 'clubs';
-    if (deckIndex < 9) {
-      deck[deckIndex].rank = deckIndex + 2;
-    } else if (deckIndex === 9) {
-      deck[deckIndex].rank = 'jack';
-    } else if (deckIndex === 10) {
-      deck[deckIndex].rank = 'queen';
-    } else if (deckIndex === 11) {
-      deck[deckIndex].rank = 'king';
-    } else if (deckIndex === 12) {
-      deck[deckIndex].rank = 'ace';
-    }
-  } else if (deckIndex < 26) {
-    deck[deckIndex].suit = 'diamonds';
-    if (deckIndex < 22) {
-      deck[deckIndex].rank = deckIndex - 11;
-    } else if (deckIndex === 22) {
-      deck[deckIndex].rank = 'jack';
-    } else if (deckIndex === 23) {
-      deck[deckIndex].rank = 'queen';
-    } else if (deckIndex === 24) {
-      deck[deckIndex].rank = 'king';
-    } else if (deckIndex === 25) {
-      deck[deckIndex].rank = 'ace';
-    }
-  } else if (deckIndex < 39) {
-    deck[deckIndex].suit = 'spades';
-    if (deckIndex < 35) {
-      deck[deckIndex].rank = deckIndex - 24;
-    } else if (deckIndex === 35) {
-      deck[deckIndex].rank = 'jack';
-    } else if (deckIndex === 36) {
-      deck[deckIndex].rank = 'queen';
-    } else if (deckIndex === 37) {
-      deck[deckIndex].rank = 'king';
-    } else if (deckIndex === 38) {
-      deck[deckIndex].rank = 'ace';
-    }
-  } else {
-    deck[deckIndex].suit = 'hearts';
-    if (deckIndex < 48) {
-      deck[deckIndex].rank = deckIndex - 37;
-    } else if (deckIndex === 48) {
-      deck[deckIndex].rank = 'jack';
-    } else if (deckIndex === 49) {
-      deck[deckIndex].rank = 'queen';
-    } else if (deckIndex === 50) {
-      deck[deckIndex].rank = 'king';
-    } else if (deckIndex === 51) {
-      deck[deckIndex].rank = 'ace';
+  var suits = ['clubs', 'diamonds', 'spades', 'hearts'];
+
+  var ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'jack', 'king', 'queen', 'ace'];
+
+  // debugger;
+  for (var suitsIndex = 0; suitsIndex < suits.length; suitsIndex++) {
+    for (var ranksIndex = 0; ranksIndex < ranks.length; ranksIndex++) {
+      deck.push({ suit: suits[suitsIndex], rank: ranks[ranksIndex] });
     }
   }
+  return deck;
 }
-
-var shuffledDeck = _.shuffle(deck);
-
-var winners = [];
 
 // First i need helper functions for:
 // dealing the cards
@@ -92,7 +48,6 @@ function dealCards(players, deck, numOfCards) {
 
 function getScore(player) {
   player.score = 0;
-  // debugger;
   for (var i = 0; i < player.hand.length; i++) {
     if (typeof player.hand[i].rank === 'number') {
       player.score += player.hand[i].rank;
@@ -114,6 +69,8 @@ function getScore(player) {
 // if it is equal to highestScore, add that player to the winners array
 
 function findWinner(players) {
+  var winners = [];
+
   var highestScore = 0;
   for (var i = 0; i < players.length; i++) {
     getScore(players[i]);
@@ -125,6 +82,7 @@ function findWinner(players) {
       winners.push(players[i]);
     }
   }
+  return winners;
 }
 
 // shuffle cards
@@ -133,10 +91,14 @@ function findWinner(players) {
 //    if there is more than one winner, deal one card to each and check for winner again
 // once there is only one winner, console.log winner message
 
-function runGame(players, numOfCards) {
+function runGame(playerNames, numOfCards) {
+  var shuffledDeck = _.shuffle(createDeck());
+
+  var players = addPlayers(playerNames);
+
   dealCards(players, shuffledDeck, numOfCards);
 
-  findWinner(players);
+  var winners = findWinner(players);
 
   while (winners.length > 1) {
     dealCards(winners, shuffledDeck, 1);
@@ -149,4 +111,6 @@ function runGame(players, numOfCards) {
   console.log(`${winners[0].name} wins!`);
 }
 
-runGame(players, 2);
+var playerNames = ['player 1', 'player 2', 'player 3', 'player 4'];
+
+runGame(playerNames, 2);
