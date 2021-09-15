@@ -1,0 +1,21 @@
+.container {
+  max-width: 900px;
+  height: 100vh;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.col-full {
+  width: 100%;
+}
+
+.col-one-fifth {
+  width: 20%;
+}
+
+.col-three-fifths {
+  width: 60%;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Carousel</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container center-content">
+    <div class="carousel col-full">
+      <div class="row">
+        <div class="col-one-fifth center-content">
+          <a><i class="fas fa-chevron-left"></i></a>
+        </div>
+        <div class="col-three-fifths">
+          <div class="row">
+            <div class="col-full center-content">
+              <img src="images/001.png">
+            </div>
+          </div>
+          <div class="row center-content mb-2rem">
+            <div class="col-three-fifths justify-between tab-container">
+              <a><i class="fas fa-circle" data-img-id="1"></i></a>
+              <a><i class="far fa-circle" data-img-id="2"></i></a>
+              <a><i class="far fa-circle" data-img-id="3"></i></a>
+              <a><i class="far fa-circle" data-img-id="4"></i></a>
+              <a><i class="far fa-circle" data-img-id="5"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-one-fifth center-content">
+          <a><i class="fas fa-chevron-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
