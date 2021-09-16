@@ -1,10 +1,22 @@
-var imgUrls = [
-  { url: 'images/001.png', imgId: '1' },
-  { url: 'images/004.png', imgId: '2' },
-  { url: 'images/007.png', imgId: '3' },
-  { url: 'images/025.png', imgId: '4' },
-  { url: 'images/039.png', imgId: '5' }
-];
+// data
+// var imgUrls = [
+//   { url: 'images/001.png', imgId: '1' },
+//   { url: 'images/004.png', imgId: '2' },
+//   { url: 'images/007.png', imgId: '3' },
+//   { url: 'images/025.png', imgId: '4' },
+//   { url: 'images/039.png', imgId: '5' }
+// ];
+
+var carouselData = {
+  imgUrls: [
+    { url: 'images/001.png', imgId: '1' },
+    { url: 'images/004.png', imgId: '2' },
+    { url: 'images/007.png', imgId: '3' },
+    { url: 'images/025.png', imgId: '4' },
+    { url: 'images/039.png', imgId: '5' }
+  ],
+  nextImgId: 6
+};
 
 // DOM elements
 var $carouselImg = document.querySelector('img');
@@ -19,15 +31,15 @@ var currentIntervalId = setInterval(carouselScroll, 3 * 1000);
 
 // functions
 function switchImg(imgId) {
-  for (var i = 0; i < imgUrls.length; i++) {
-    if (imgUrls[i].imgId === imgId) {
-      $carouselImg.setAttribute('src', imgUrls[i].url);
+  for (var i = 0; i < carouselData.imgUrls.length; i++) {
+    if (carouselData.imgUrls[i].imgId === imgId) {
+      $carouselImg.setAttribute('src', carouselData.imgUrls[i].url);
     }
   }
 }
 
 function getNextImg() {
-  if (currentImgId === imgUrls.length) {
+  if (currentImgId === carouselData.imgUrls.length) {
     currentImgId = 1;
   } else {
     currentImgId++;
@@ -37,7 +49,7 @@ function getNextImg() {
 
 function getPreviousImg() {
   if (currentImgId === 1) {
-    currentImgId = imgUrls.length;
+    currentImgId = carouselData.imgUrls.length;
   } else {
     currentImgId--;
   }
@@ -57,6 +69,37 @@ function highlightCurrentTab(imgId) {
 function carouselScroll() {
   getNextImg();
   highlightCurrentTab(currentImgId.toString());
+}
+
+function addImg(imgUrl) {
+  var newImg = {};
+  newImg.url = imgUrl;
+  newImg.imgId = carouselData.nextImgId.toString();
+  carouselData.imgUrls.push(newImg);
+
+  // <i class="far fa-circle" data-img-id="carouselData.nextImgId"></i>
+
+  var $tabIcon = document.createElement('i');
+  $tabIcon.setAttribute('class', 'far fa-circle');
+  $tabIcon.setAttribute('data-img-id', carouselData.nextImgId.toString());
+
+  $tabContainer.append($tabIcon);
+
+  $tabList = document.querySelectorAll('.tab-container i');
+
+  carouselData.nextImgId++;
+}
+
+function removeImg(imgId) {
+  for (var i = 0; i < carouselData.imgUrls.length; i++) {
+    if (carouselData.imgUrls[i].imgId === imgId.toString()) {
+      carouselData.imgUrls.splice(i, 1);
+    }
+    if ($tabList[i].getAttribute('data-img-id') === imgId.toString()) {
+      $tabContainer.removeChild($tabList[i]);
+    }
+  }
+  $tabList = document.querySelectorAll('.tab-container i');
 }
 // event handlers
 
