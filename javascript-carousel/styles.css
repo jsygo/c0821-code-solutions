@@ -1,0 +1,23 @@
+.carousel {
+  border: 2px solid black;
+}
+
+.fa-chevron-left,
+.fa-chevron-right {
+  font-size: 3rem;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.justify-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mb-2rem {
+  margin-bottom: 2rem;
+}
