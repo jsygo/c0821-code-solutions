@@ -1,0 +1,490 @@
+    1  exit
+    2  whoami
+    3  exit
+    4  whoami
+    5  git config --global user.name "jsygo"
+    6  git config --global user.email "joshsygobusiness@gmail.com"
+    7  git config --global --list
+    8  exit
+    9  whoami
+   10  ls
+   11  cd repos
+   12  cd driving-game/
+   13  git statu
+   14  git status
+   15  git add css
+   16  git stats
+   17  git status
+   18  git commit -m "Completed feature 1"
+   19  git push origin issue-1-see-car
+   20  git switch master
+   21  git pull origin master
+   22  git branch issue-2-turn-car
+   23  git switch issue-2-turn-car
+   24  git status
+   25  git add css js
+   26  git status
+   27  git commit -m "created data model, added event listener for keydown, in process of creating css classes for turning"
+   28  git status
+   29  git add css js
+   30  git commit -m "finished css classes for turning and transitions"
+   31  git push origin master
+   32  git push origin issue-2-turn-car
+   33  git status
+   34  git add css
+   35  git comit -m "moved transition property to car class"
+   36  git commit -m "moved transition property to car class"
+   37  git push origin issue-2-turn-car
+   38  git switch master
+   39  git pull origin master
+   40  git branch issue-3-start-car
+   41  git switch issue-3-start-car
+   42  git status
+   43  git add js css
+   44  git status
+   45  git commit -m "If user presses space, make the car move forward"
+   46  git commit -m "If user presses space, make the car move forward" --no-verify
+   47  git status
+   48  git add js
+   49  git commit -m "car stops if it hits the right side wall"
+   50  git add js
+   51  git status
+   52  git commit -m "removed commented out code"
+   53  git push origin issue-3-start-car
+   54  git switch master
+   55  git pull origin master
+   56  git branch issue-4-stop-car
+   57  git switch issue-4-stop-car
+   58  git branch -m issue-4-stop-car-issue-5-steer-car
+   59  git status
+   60  git add css js
+   61  git status
+   62  git commit -m "added stop when space bar is pressed, steer the car"
+   63  git push origin issue-4-stop-car-issue-5-steer-car
+   64  git status
+   65  git add js
+   66  git commit -m "wrapped code blocks for moving car different directions inside functions"
+   67  git push origin issue-4-stop-car-issue-5-steer-car
+   68  git switch master
+   69  git pull origin master
+   70  cd
+   71  cd repos
+   72  ls
+   73  cd c0821-code-solutions/
+   74  git switch javascript-carousel
+   75  git statu
+   76  sgit status
+   77  git status
+   78  git add javascript-carousel
+   79  git commit -m "in process of switching from using image id to image array index"
+   80  git commit -m "in process of switching from using image id to image array index" --no-verify
+   81  git switch master
+   82  git branch http-messages
+   83  git switch http-messages
+   84  cd http-messages/
+   85  http https://example.com
+   86  http --verbose https://example.com
+   87  http --body GET https://jsonplaceholder.typicode.com/users > users.json
+   88  http --body GET https://example.com > index.html
+   89  cd ./
+   90  cd../
+   91  cd ../
+   92  git status
+   93  git add http-messages
+   94  git status
+   95  git commit -m "Completed http-messages exercise"
+   96  git push origin http-messages
+   97  git switch
+   98  git switch master
+   99  git pull origin master
+  100  git switch javascript-carousel
+  101  git status
+  102  git add javascript-carousel
+  103  git status
+  104  git commit -m "testing methods to find index of tabs"
+  105  git commit -m "testing methods to find index of tabs" --no-verify
+  106  git switch master
+  107  git branch javascript-ajax
+  108  git switch javascript-ajax
+  109  git status
+  110  git add javascript-ajax
+  111  git status
+  112  git commit -m "Completed javascript-ajax exercise"
+  113  git push origin javascript-ajax
+  114  git status
+  115  git switch master
+  116  git switch javascript-carousel
+  117  git status
+  118  git add javascript-carousel
+  119  git status
+  120  git commit -m "in progress of changing ways to switch images"
+  121  git commit -m "in progress of changing ways to switch images" --no-verify
+  122  git switch master
+  123  http http://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1
+  124  cd
+  125  whoami
+  126  cd repos
+  127  git clone git@github.com:jsygo/ajax-project.git
+  128  cd ajax-project
+  129  npm ci
+  130  git branch issue-1-start-game
+  131  git switch issue-1-start-game
+  132  git status
+  133  git add index.html css js images
+  134  git status
+  135  git commit -m "styled background, table text, buttons. made ssure cards displayed properly on both mabile and desktop."
+  136  git status
+  137  git add images css js index.html
+  138  git statua
+  139  git status
+  140  git commit -m "added starting page" --no-verify
+  141  git status
+  142  git add css js index.html
+  143  git status
+  144  git commit -m "added view swap between starting page and game page. created data model. created constructor function for new player objects. made request for deck and stored deck id in the data model." --no-verify
+  145  git status
+  146  git commit js
+  147  git status
+  148  git add js
+  149  git status
+  150  git commit -m "set up functions to draw and deal cards"
+  151  git status
+  152  git commit css js index.html
+  153  git status
+  154  git add css js index.html
+  155  git status
+  156  git commit -m "render cards on page. clean up code"
+  157  git push origin issue-1-start-game
+  158  git status
+  159  git add css js
+  160  git status
+  161  git commit -m "cleaned up javascript, changed way that cards are dealt at beginning of game"
+  162  git push origin issue-1-start-game
+  163  git status
+  164  git add js
+  165  git commit -m "removed xhr from the global scope"
+  166  git status
+  167  git add js
+  168  git status
+  169  git commit -m "removed commented out functions"
+  170  git push origin feature-1-start-game
+  171  git push origin issue-1-start-game
+  172  git switch master
+  173  git pull origin master
+  174  git branch issue-2-hit
+  175  git switch issue-2-hit
+  176  git status
+  177  git add index.html js
+  178  git status
+  179  git commit -m "create hit button, when deal cards button is clicked, hide deal cards button and show hit button."
+  180  git status
+  181  git add js
+  182  git commit -m "add card to player hand when hit button is clicked"
+  183  git push origin issue-2-hit
+  184  git switch master
+  185  git pull origin master
+  186  git branch issue-3-stand
+  187  git switch issue-3-stand
+  188  git status
+  189  git add css js index.html
+  190  git status
+  191  git commit -m "created, styled, and spaced out stand button.'
+git status
+"
+  192  git status
+  193  git add js css
+  194  git status
+  195  git commit -m "display second card in dealers hand face down. display face up once player stands"
+  196  git commit -m "display second card in dealers hand face down. display face up once player stands" --no-verify
+  197  git status
+  198  git add js
+  199  git status
+  200  git commit -m "defined function to get score of player or dealer hand.
+"
+  201  git commit -m "defined function to get score of player or dealer hand.
+" --no-verify
+  202  git status
+  203  git add js
+  204  git commit -m "push aces into an array. only loop over that array when checking score for aces."
+  205  git commit -m "push aces into an array. only loop over that array when checking score for aces." --no-verify
+  206  git status
+  207  git add js
+  208  git commit -m "removed unnecessary Number.isNaN"
+  209  git commit -m "removed unnecessary Number.isNaN" --no-verify
+  210  git status
+  211  git add js
+  212  git status
+  213  git commit -m "When stand button is clicked, if the dealers score is 16 or less, have the dealer hit until the dealers score is at least 17."
+  214  git push origin issue-3-stand
+  215  git status
+  216  git add js
+  217  git commit -m "added interval so dealer does not receive all cards instantly"
+  218  git push origin issue-3-stand
+  219  git switch master
+  220  git pull origin master
+  221  git branch issue-4-complete-game
+  222  git switch issue-4-complete-game
+  223  git status
+  224  git add css index.html
+  225  git status
+  226  git commit -m "Create modal for end of game. Make sure modal displays properly on both mobile and desktop."
+  227  git status
+  228  git add js css index.html
+  229  git status
+  230  git commit -m "Modify text content of the end of game modal based on the player and dealer's scores.
+Display modal once dealer stands."
+  231  git push origin issue-4-complete-game
+  232  git status
+  233  git commit js css
+  234  git add js css
+  235  git status
+  236  git commit -m "removed important from text color classes"
+  237  git push origin issue-4-complete-game
+  238  git switch master
+  239  git branch issue-5-place-bet
+  240  git switch issue-5-place-bet
+  241  git status
+  242  git add css index.html
+  243  git statu
+  244  git status
+  245  git commit -m "in process of adding and styling play again button."
+  246  git status
+  247  git add css
+  248  git commit -m "in process of adding and styling play again button 2"
+  249  git switch master
+  250  git pull origin master
+  251  git switch issue-5-place-bet
+  252  git status
+  253  git add css
+  254  git commit -m "Create and style play again button. Make sure end of game modal still displays properly on desktop and mobile."
+  255  git status
+  256  git add css index.html
+  257  git commit -m "Create balance and current bet and add to page. Make sure balance and current bet display properly on both mobile and desktop."
+  258  git status
+  259  git add css index.html
+  260  git status
+  261  git commit -m "Create input and buttons for placing bet at beginning of the game. Make sure input and buttons for placing bet display properly on both mobile and desktop."
+  262  git status
+  263  git add js
+  264  git status
+  265  git commit -m "added balance and previouHands property to Player constructor function. added current bet property to data model."
+  266  git status
+  267  git add css index.html js
+  268  git status
+  269  git commit -m "Modify balance and current bet in data model based on user input on the bet form. Modify text of balance and current bet based on the data from the data model."
+  270  git status
+  271  git add index.html js
+  272  git status
+  273  git commit -m "If player wins, add their winnings to their balance. If player gets blackjack, multiply winnings by 1.5."
+  274  git status
+  275  git commit js
+  276  git status
+  277  git add js
+  278  git status
+  279  git commit -m "Create a constructor function for a previous hand object with a player hand, dealer hand, and bet property. When play again button is clicked, reset game. Clean up."
+  280  git push origin issue-5-place-bet
+  281  git switch master
+  282  git pull origin master
+  283  git switch master
+  284  git switch issue-5-place-bet
+  285  git status
+  286  git add js
+  287  git status
+  288  git commit -m "input bar for placing bets now updates bet properly"
+  289  git push origin issue-5-place-bet
+  290  git switch master
+  291  git remote set-url origin git@github.com:jsygo/blackjack.git
+  292  cd 
+  293  cd repos
+  294  mv ajax-project blackjack
+  295  ls
+  296  cd blackjack
+  297  git branch --list
+  298  git status
+  299  git add js
+  300  git status
+  301  git commit "changed request from http to https"
+  302  git commit -m "changed request from http to https"
+  303  git push origin master
+  304  git status
+  305  git branch project-polish
+  306  git switch project-polish
+  307  git status
+  308  git commit index.hmtl
+  309  git add index.html
+  310  git status
+  311  git commit -m "added title of project for browser tab"
+  312  git push origin project-polish
+  313  git status
+  314  git add images
+  315  git commit -m "updated favicon to spade suit"
+  316  git push origin project-polish
+  317  git status
+  318  git add index.html
+  319  git status
+  320  git commit -m "added open graph meta tags"
+  321  git push origin project-polish
+  322  git switch
+  323  git switch master
+  324  git pull origin master
+  325  git branch code-cleanup
+  326  git switch code-cleanup
+  327  git status
+  328  git add images
+  329  git status
+  330  git commit -m "deleted files for placeholder card images"
+  331  git status
+  332  git add css
+  333  git status
+  334  git commit -m "removed unused css classes"
+  335  git push origin code-cleanup
+  336  git switch master
+  337  git pull origin master
+  338  git branch user-interfaces
+  339  git switch user-interfaces
+  340  git status
+  341  git add css
+  342  git status
+  343  git commit -m "removed corners from card images"
+  344  git status
+  345  git add css
+  346  git status
+  347  git commit -m "fixed mobile version button sizing"
+  348  git status
+  349  git add css
+  350  git add index.html
+  351  git status
+  352  git commit -m "fixed bugs in mobile-first responsiveness"
+  353  git status
+  354  git add js css index.html
+  355  git staus
+  356  git status
+  357  git commit -m "added network error message"
+  358  git push origin master
+  359  git push origin user-interfaces
+  360  git switch master
+  361  git pull origin master
+  362  git status
+  363  cd
+  364  cd repos
+  365  cd c0821-code-solutions/
+  366  git branch es6-const-let
+  367  git switch es6-const-let
+  368  git status
+  369  git add es6-const-let
+  370  git status
+  371  git commit es6-const-let
+  372  git commit -m "Completed es6-const-let exercise."
+  373  git push origin es6-const-let
+  374  git switch master
+  375  git branch es6-template-literals
+  376  git switch es6-template-literals
+  377  git status
+  378  git add es6-template-literals
+  379  git status
+  380  git commit -m "Completed es6-template-literals exercise."
+  381  git push origin es6-template-literals
+  382  git status
+  383  git switch master
+  384  git branch es6-destructuring
+  385  git switch es6-destructuring
+  386  git status
+  387  git add es6-destructuring
+  388  git status
+  389  git commit -m "Completed es6-destructuring exercise."
+  390  git push origin es6-destructuring
+  391  git switch master
+  392  git pull origin master
+  393  git branch es6-arrow-functions
+  394  git switch es6-arrow-functions
+  395  git status
+  396  git add es6-arrow-functions
+  397  git status
+  398  git commt -m "Completed es6-arrow-functions exercise."
+  399  git commit -m "Completed es6-arrow-functions exercise."
+  400  git push origin es6-arrow-functions
+  401  git switch master
+  402  git branch command-line-basics
+  403  git switch command-line-basics
+  404  cd command-line-basics/
+  405  pwd
+  406  man
+  407  man man
+  408  man cat
+  409  cat laziness.txt 
+  410  cat impatience.txt 
+  411  cat hubris.txt 
+  412  cat laziness.txt impatience.txt hubris.txt 
+  413  cat laziness.txt impatience.txt hubris.txt > three-virtues.txt
+  414  cat three-virtues.txt 
+  415  man ls
+  416  ls
+  417  ls -a
+  418  ls -F
+  419  man ls
+  420  ls lfz-staff/
+  421  ls lfz-staff/ -a
+  422  ls lfz-staff/ -f
+  423  man ls
+  424  ls lfz-staff/ -F
+  425  ls lfz-staff/ -a
+  426  ls lfz-staff/ -F
+  427  ls lfz-staff/ -aF
+  428  ls -aF lfz-staff/ > lfz-staff/content.txt
+  429  cat lfz-staff/content.txt 
+  430  ls
+  431  cat kill-me
+  432  cd kill me
+  433  cd kill-me
+  434  ls
+  435  cat kill-me-now.png 
+  436  clear
+  437  cd ../
+  438  man pwd
+  439  pwd
+  440  pwd > i-was-here.txt
+  441  ls
+  442  cat i-was-here.txt 
+  443  man echo
+  444  echo 'Hello, World!'
+  445  echo 'Hello, World!' > hello.txt
+  446  ls
+  447  cat hello
+  448  cat hello.txt
+  449  man touch
+  450  touch tag-youre-it.txt
+  451  man touch
+  452  touch snoot/boop.txt
+  453  ls snoot/
+  454  man mkdir
+  455  mkdir parnet
+  456  man mv
+  457  mv parnet parent
+  458  ls
+  459  ls -F
+  460  man mkdir
+  461  mkdir -p parent/child/grandchild
+  462  touch parent/child/grnadchild/.gitkeep
+  463  touch parent/child/grandchild/.gitkeep
+  464  ls -a
+  465  ls -a parent/child/grandchild
+  466  man mv
+  467  ls
+  468  mv pokiemans pokemon
+  469  ls
+  470  man rm
+  471  cat lol.txt
+  472  rm lol.tx
+  473  rm lol.txt
+  474  ls
+  475  man rm
+  476  rm  -r kill-me/
+  477  ls
+  478  man cp
+  479  cp and-then.txt no-and-then.txt
+  480  cat no-and-then.txt 
+  481  la
+  482  cat and-then.txt 
+  483  man history
+  484  history
+  485  history > command-history.txt
