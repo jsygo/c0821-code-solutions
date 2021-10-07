@@ -1,10 +1,8 @@
-const data = require('./data');
+const data = require('./data.json');
 const fs = require('fs');
 
-module.exports = text => {
-  data.notes[data.nextId] = text;
-
-  data.nextId++;
+module.exports = id => {
+  delete data.notes[id];
 
   const dataJSON = JSON.stringify(data, null, 2);
 
