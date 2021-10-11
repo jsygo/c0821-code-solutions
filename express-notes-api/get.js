@@ -12,7 +12,7 @@ module.exports = {
   getNoteById: (req, res) => {
     if ((req.params.id < 1) || !(Number.isInteger(parseFloat(req.params.id)))) {
       const badRequest = {
-        error: 'id must be a positive integer'
+        error: 'id must be a positive integer :('
       };
 
       res.status(400).json(badRequest);

@@ -4,7 +4,7 @@ const fs = require('fs');
 module.exports = (req, res) => {
   if (!req.body.content) {
     const badRequest = {
-      error: 'content is a required field'
+      error: 'content is a required field :('
     };
 
     res.status(400).json(badRequest);
