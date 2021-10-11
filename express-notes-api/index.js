@@ -16,6 +16,8 @@ app.use(express.json());
 app.post('/api/notes', postNote);
 
 // edit note
+const putNote = require('./put');
+app.put('/api/notes/:id', putNote);
 
 app.listen(3000, () => {
   // eslint-disable-next-line no-console
