@@ -1,26 +1,3 @@
--- with "revenue" as (
---   select sum("films"."rentalRate") as "totalRevenue",
---           "films"."title" as "title"
---     from "films"
---     join "inventory" using ("filmId")
---     join "rentals" using ("inventoryId")
---   group by "films"."filmId"
--- ),
--- "cost" as (
---   select sum("films"."replacementCost") as "totalCost",
---          "films"."title" as "title"
---     from "films"
---     join "inventory" using ("filmId")
---   group by "films"."filmId"
--- ),
--- "profit" as (
---   select ("revenue"."totalRevenue" - "cost"."totalCost") as "totalProfit",
---          "films"."title"
---     from "revenue"
---     join "cost" using ("title")
---     join "films" using ("title")
--- )
-
 with "cost" as (
   select sum("films"."replacementCost") as "totalCost",
          "films"."title"
@@ -29,11 +6,12 @@ with "cost" as (
   group by "filmId"
 ),
 "revenue" as (
-  select sum("films"."rentalRate") as "totalRevenue",
+  select sum("payments"."amount") as "totalRevenue",
          "films"."title"
     from "films"
     join "inventory" using ("filmId")
     join "rentals" using ("inventoryId")
+    join "payments" using("rentalId")
   group by "filmId"
 )
 
