@@ -107,7 +107,38 @@ app.put('/api/grades/:gradeId', (req, res) => {
 });
 
 app.delete('/api/grades/:gradeId', (req, res) => {
+  const gradeId = Number(req.params.gradeId);
+  if (!Number.isInteger(gradeId) || gradeId < 1) {
+    res.status(400).json({
+      error: 'gradeId must be a positive integer :('
+    });
+  } else {
+    const sql = `
+      delete from "grades"
+            where "gradeId" = $1
+        returning *;
+    `;
 
+    const params = [gradeId];
+
+    db.query(sql, params)
+      .then(result => {
+        const grade = result.rows[0];
+        if (!grade) {
+          res.status(404).json({
+            error: `Cannot find grade ${gradeId}`
+          });
+        } else {
+          res.sendStatus(204);
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        res.status(500).json({
+          error: 'Sorry! An enxepected error occurred :('
+        });
+      });
+  }
 });
 
 app.listen(3000, () => {
