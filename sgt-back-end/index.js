@@ -63,7 +63,47 @@ app.post('/api/grades', (req, res) => {
 });
 
 app.put('/api/grades/:gradeId', (req, res) => {
+  const gradeId = Number(req.params.gradeId);
+  const { name = null, course = null } = req.body;
+  const score = Number(req.body.score);
+  if (!Number.isInteger(gradeId) || gradeId < 1) {
+    res.status(400).json({
+      error: 'gradeId must be a positive integer :('
+    });
+  } else if (!name || !course || !score || !Number.isInteger(score) || score > 100 || score < 0) {
+    res.status(400).json({
+      error: 'Valid grades need a: name, course, and score (integer from 0 to 100) :('
+    });
+  } else {
+    const sql = `
+      update "grades"
+         set "name" = $1,
+             "course" = $2,
+             "score" = $3
+       where "gradeId" = $4
+      returning *;
+    `;
 
+    const params = [name, course, score, gradeId];
+
+    db.query(sql, params)
+      .then(result => {
+        const grade = result.rows[0];
+        if (!grade) {
+          res.status(404).json({
+            error: `Cannot find grade ${gradeId}`
+          });
+        } else {
+          res.status(200).json(result.rows[0]);
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        res.status(500).json({
+          error: 'Sorry! An enxepected error occurred :('
+        });
+      });
+  }
 });
 
 app.delete('/api/grades/:gradeId', (req, res) => {
