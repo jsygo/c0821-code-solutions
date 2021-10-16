@@ -17,21 +17,21 @@ const traits = [
   { trainer: 'ash' }
 ];
 
-const sum = numbers.reduce((previousValue, currentValue) => previousValue + currentValue);
+const sum = numbers.reduce((sum, number) => sum + number);
 console.log('sum', sum);
 
-const product = numbers.reduce((previousValue, currentValue) => previousValue * currentValue);
+const product = numbers.reduce((product, number) => product * number);
 console.log('product', product);
 
 // eslint-disable-next-line array-callback-return
-const balance = account.reduce((previousValue, currentValue) => {
-  if (currentValue.type === 'deposit') {
-    return previousValue + currentValue.amount;
-  } else if (currentValue.type === 'withdrawal') {
-    return previousValue - currentValue.amount;
+const balance = account.reduce((balance, transaction) => {
+  if (transaction.type === 'deposit') {
+    return balance + transaction.amount;
+  } else if (transaction.type === 'withdrawal') {
+    return balance - transaction.amount;
   }
 }, 0);
 console.log('balance', balance);
 
-const composite = traits.reduce((previousValue, currentValue) => Object.assign(previousValue, currentValue));
+const composite = traits.reduce((composite, trait) => Object.assign(composite, trait), {});
 console.log('composite', composite);

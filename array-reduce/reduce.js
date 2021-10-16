@@ -15,7 +15,7 @@ function reduce(array, reducer, initialValue) {
   let output = null;
   let i = 1;
   if (arguments.length === 3) {
-    output = arguments[2];
+    output = initialValue;
     i = 0;
   } else {
     output = array[0];
@@ -27,21 +27,21 @@ function reduce(array, reducer, initialValue) {
   return output;
 }
 
-const mySum = reduce(numbers, (previousValue, currentValue) => previousValue + currentValue);
+const mySum = reduce(numbers, (sum, number) => sum + number);
 console.log('mySum', mySum);
 
-const myProduct = reduce(numbers, (previousValue, currentValue) => previousValue * currentValue);
+const myProduct = reduce(numbers, (product, number) => product * number);
 console.log('myProduct', myProduct);
 
 // eslint-disable-next-line array-callback-return
-const myBalance = reduce(account, (previousValue, currentValue) => {
-  if (currentValue.type === 'deposit') {
-    return previousValue + currentValue.amount;
-  } else if (currentValue.type === 'withdrawal') {
-    return previousValue - currentValue.amount;
+const myBalance = reduce(account, (balance, transaction) => {
+  if (transaction.type === 'deposit') {
+    return balance + transaction.amount;
+  } else if (transaction.type === 'withdrawal') {
+    return balance - transaction.amount;
   }
 }, 0);
 console.log('myBalance', myBalance);
 
-const myComposite = reduce(traits, (previousValue, currentValue) => Object.assign(previousValue, currentValue));
+const myComposite = reduce(traits, (composite, trait) => Object.assign(composite, trait), {});
 console.log('myComposite', myComposite);
