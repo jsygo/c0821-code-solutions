@@ -1,0 +1,51 @@
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  font-size: 2rem;
+  padding: 20px 30px;
+  border-radius: 8px;
+  border: darkgray outset 3px;
+  box-shadow: 3px 5px 5px darkslategray;
+}
+
+button:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:active {
+  transform: translateY(3px);
+  box-shadow: none;
+}
+
+.purple {
+  background-color: rebeccapurple;
+  color: white;
+}
+
+.violet {
+  background-color: darkviolet;
+  color: white;
+}
+
+.red {
+  background-color: tomato;
+  color: white;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.white {
+  background-color: white;
+}
