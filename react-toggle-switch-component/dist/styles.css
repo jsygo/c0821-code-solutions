@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.switch-container {
+  padding: 2px;
+  width: 60px;
+  border-radius: 15px;
+  border: 2px solid black;
+  display: flex;
+}
+
+.switch-on {
+  background-color: green;
+  justify-content: flex-end;
+}
+
+.switch-off {
+  background-color: grey;
+  justify-content: flex-start;
+}
+
+.switch {
+  background-color: white;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 2px solid black;
+}
