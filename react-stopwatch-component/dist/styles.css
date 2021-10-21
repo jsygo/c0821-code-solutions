@@ -1,0 +1,28 @@
+body {
+  font-family: sans-serif;
+}
+
+.container {
+  height: 100vh;
+}
+
+.watchface {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  border: 10px solid slategray;
+  background-color: #333138;
+  color: limegreen;
+  font-size: 7rem;
+}
+
+.icon {
+  font-size: 3rem;
+  margin: 15px;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
