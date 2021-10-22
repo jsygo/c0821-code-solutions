@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-image: url('https://blueseatblogs.com/wp-content/uploads/2018/07/consciousness-709143-400x300.jpg');
+  background-size: cover;
+  margin: 0;
+}
+
+i {
+  color: white;
+  position: absolute;
+  z-index: 1;
+  visibility: visible;
+  transition: visibility 0s 0.3s;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+i,
+li {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.invisible {
+  visibility: hidden;
+  transition: visibility 0s 0s;
+}
+
+.overlay {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background-color: rgba(5, 5, 5, 0.5);
+  transition: background-color 0.5s;
+}
+
+.transparent {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.drawer {
+  background-color: white;
+  width: 250px;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  transition: left 0.5s;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.font-4rem {
+  font-size: 4rem;
+}
+
+.margin-20px {
+  margin: 20px;
+}
+
+.padding-20px {
+  padding: 20px;
+}
+
+.padding-12px {
+  padding: 12px;
+}
+
+.position-left-minus250px {
+  left: -250px;
+}
