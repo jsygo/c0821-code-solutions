@@ -11,11 +11,7 @@ export default class Accordion extends Component {
 
   handleClick(event) {
     if (event.target.matches('.title')) {
-      if (this.state.openTab === null) {
-        this.setState({
-          openTab: event.target.textContent
-        });
-      } else if (event.target.textContent === this.state.openTab) {
+      if (event.target.textContent === this.state.openTab) {
         this.setState({
           openTab: null
         });
@@ -31,18 +27,13 @@ export default class Accordion extends Component {
     return (
       <div onClick={this.handleClick}>
         {this.props.items.map(item => {
-          if (item.title === this.state.openTab) {
-            return (
-              <div key={item.title}>
-                <div className="title">{item.title}</div>
-                <div className="details">{item.details}</div>
-              </div>
-            );
-          }
+          const detailsClassName = item.title === this.state.openTab
+            ? 'details'
+            : 'details hidden';
           return (
-            <div key={item.title} listid={item.title}>
+            <div key={item.title}>
               <div className="title">{item.title}</div>
-              <div className="details hidden">{item.details}</div>
+              <div className={detailsClassName}>{item.details}</div>
             </div>
           );
         })}
