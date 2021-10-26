@@ -76,6 +76,27 @@ export default class App extends React.Component {
      * TIP: Be sure to SERIALIZE the updates in the body with JSON.stringify()
      * And specify the "Content-Type" header as "application/json"
      */
+    const oldTodo = this.state.todos.find(todo => todo.todoId === todoId);
+    const { isCompleted } = oldTodo;
+    const newStatus = { isCompleted: !isCompleted };
+    const init = {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newStatus)
+    };
+    fetch(`/api/todos/${todoId}`, init)
+      .then(res => res.json())
+      .then(todo => {
+        const todosCopy = [...this.state.todos];
+        const oldTodoIndex = this.state.todos.findIndex(todo => todo === oldTodo);
+        todosCopy[oldTodoIndex] = todo;
+        this.setState({
+          todos: todosCopy
+        });
+      })
+      .catch(err => console.error('fetch failed :(', err));
   }
 
   render() {
