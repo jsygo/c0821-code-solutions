@@ -1,8 +1,4 @@
-const graduate = credential => {
-  return fullName => {
-    return `${fullName}, ${credential}`;
-  };
-};
+const graduate = credential => fullName => `${fullName}, ${credential}`;
 
 const medicalSchool = graduate('M.D.');
 const lawSchool = graduate('Esq.');
