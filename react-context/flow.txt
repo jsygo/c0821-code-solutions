@@ -58,9 +58,51 @@ the server receives the request at '/api/auth/sign-in'
   the server checks to ensure the request includes both username and password values
     if it doesnt, the server throws a 401 error, 'invalid login'
     if it does,
+      the 'userId' and 'hashedPasword' columns of the matching user are selected from the 'users' table
+        if there is no user that matches
+          the server throws a 401 error, 'invalid login'
+        if there is a match
+          the server verifies the entered password against the hashedPassword
+            if the password doesnt match
+              the server throws a 401 error, 'invalid login'
+            if the password does match
+              a payload object is created with the username and userId
+              a token is created using the payload and the servers TOKEN_SECRET
+              the server sends a response with both the token and payload
+when the promise returned by the fetch function is resolved
+  since the action is currently 'sign-in',
+  the result is passed as an to the onSignIn prop (handleSignIn) of the AuthForm
+    handleSignIn stores the token in local storage
+    handleSignIn sets the user property of the state to the newly received user
+      this triggers a rerender
+        App renders an Auth component, but this time there is a value in the user variable
+          this triggers a redirect, which changes the hash to path ''
+            this triggers the hashchange event listener, which updates the App's state with the new route
+              this triggers a rerender
+                App renders a Home component
 
 3. User can stay signed in (even if they refresh the page):
 
+when the user signs in, handleSignIn saves the users unique token in local storage
 
+if the user refreshes the page, the App component's componentDidMount method is called again
+  the route stays the same
+  the token is retrieved from local storage
+    the token is decoded to extract the user object
+  componentDidMount updates the user in the state
+
+the App component renders the Home page
 
 4. user can sign out:
+
+when the navbar is rendered, it checks if there is currently an active user
+  if there is, it renders a sign out button instead of a sign up and log in button
+    the handleSignOut method from the context is assigned to the sign out buttons onClick prop
+
+when handleSignOut is called,
+  the token is removed from local storage
+  the user property of the state is set to null
+
+since the path hasnt changed, App renders the Home page
+  this time, there is no more current user which triggers a Redirect to the 'sign-in' page
+    this triggers the 'hashchange' event, and this time App renders the sign in page
